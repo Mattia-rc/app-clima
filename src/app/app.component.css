@@ -1,0 +1,11 @@
+.bg-custom{
+background-image:url('../assets/pexels-photo-417074.jpg');
+background-position: center;
+background-repeat: no-repeat, repeat;
+background-size: cover;
+height: 100vh;
+}
+
+.contendedor-center{
+    margin: 100% auto 0;
+}

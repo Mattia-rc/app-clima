@@ -1,0 +1,51 @@
+<div class="container style-contenedor">
+    <div class="contendedor-center">
+
+      <div>
+          <p class="texto-superior">Ingrese la ciudad</p>
+      </div>
+        <form (ngSubmit)="getValor()">
+        
+          
+            <div>
+              
+              <input class="input-style" type="text" id="miInput" [(ngModel)]="inputValor" name="miInput" placeholder="Ingresa una Ciudad" required>
+            </div>
+            <div class="contendor-boton">
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+
+          <div class="info-container" *ngIf="weatherData">
+              
+
+            <div class="contenedor-info d-flex justify-content-between ">
+                <div class="seccionUno">
+                  <div class="d-flex justify-content-left align-items-center">
+                    <h2 style="color: white;"> {{weatherData.current.temp_c}}° </h2>
+                    <img class="img-weather" src={{weatherData.current.condition.icon}} alt="icono pronostico">
+                  </div>
+                  <p>Sensacion Térmica: {{weatherData.current.feelslike_c}} </p>
+                </div>
+                <div class="seccionDos">
+                  <h4>{{weatherData.current.condition.text}}</h4>
+                  <p>Precip.:{{weatherData.current.precip_mm}}%</p>
+                  <p>Humedad: {{weatherData.current.humidity}}%</p>
+                  <p>Viento:{{weatherData.current.wind_kph}}Km/h</p>
+                  <p>Cobertura de nubes: {{weatherData.current.cloud}}%</p>
+                </div>
+            </div>
+
+<!--               <h1 style="color: wheat; text-align: center;">{{weatherData.location.name}} </h1>
+              <h3>{{weatherData.location.localtime}} </h3>
+
+              <div class="d-flex justify-content-center gap-2 align-items-center">
+                <img class="img-weather" src={{weatherData.current.condition.icon}} alt="icono pronostico">
+                <h2 style="color: white;"> {{weatherData.current.temp_c}}° </h2>
+                <p>{{weatherData.current.maxtemp_c}} </p>
+              </div>
+               -->
+
+          </div>
+    </div>
+</div>
